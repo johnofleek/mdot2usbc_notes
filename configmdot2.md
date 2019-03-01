@@ -169,6 +169,53 @@ Provide the network handle and CID returned at connection activation
 qmicli --device=/dev/cdc-wdm0 --device-open-proxy --wds-stop-network=NETWORK_HANDLE --client-cid=CID
 ```
 
+# Additional testing
+
+Request module manufacturer
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-manufacturer
+```
+
+Get module model
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-model
+```
+
+Get firmware version
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-revision
+```
+
+Get module IDs (IMEI etc.)
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-ids
+```
+
+Get SIM card status
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --uim-get-card-status
+```
+
+Check libqmi version
+Recent cellular modules like Sierra Wireless EM7565 require at least libqmi V1.20. 
+```
+qmicli --version 
+```
+Test the WAN IP connection
+A ping to a remote server using the cellular network interface
+```
+ping -I wwan0 8.8.8.8
+```
+Network interface information
+```
+ifconfig wwan0
+```
+
+# Further notes
+libqmi is well integrated and supported in ModemManager tool for Linux. ModemManager again is well integrated and supported when using NetworkManager tool in Linux. Please note however that these two tools expect the cellular module interfaces to only be used by them so if you manually want to use the libqmi library or AT commands interfaces, please turn off/disable ModemManager and NetworkManager first.
+
+The libqmi is a generic open source library for Linux systems and QMI protocol from Qualcomm, therefor there are several commands only working on selected devices and not necessarily on supported in the specific device you use, resulting in an error message.
+
 
 
 
