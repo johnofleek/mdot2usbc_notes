@@ -1,5 +1,5 @@
 This note documents a process to bring up a Debian linux wwan interface using the
- Qualcomm QMI interface with the *RAW-IP* data link format.
+ Qualcomm QMI interface with the **RAW-IP** data link format.
 
 These notes were tested on a Raspberry Pi3
 ```
@@ -9,6 +9,7 @@ NAME="Raspbian GNU/Linux"
 VERSION_ID="9"
 VERSION="9 (stretch)"
 ```
+And a Sierra Wireless EM7305 fitted into a Raspberry pi M.2 to USB C HAT board
 
 
 # QMI
@@ -17,10 +18,11 @@ Many Sierra Wireless cellular modules based on Qualcomm chipsets implements
 
 ## Some Sierra Wireless modules versus data link format 
 
-*802.3* 
-Sierra Wireless MC73**/EM73**
+**802.3** 
+Sierra Wireless MC73**
 
-*RAW-IP* 
+**RAW-IP** 
+Sierra Wireless EM73**
 Sierra Wireless MC74**/EM74** 
 Sierra Wireless EM75**
 
@@ -45,7 +47,7 @@ sudo apt-get install minicom
 ```
 
 Install udhcpu  
-It's used to get an ip address from a dhcp server.
+Used to get an ip address from a dhcp server.
 ```
 sudo apt-get install udhcpc
 ```
@@ -121,7 +123,7 @@ Check the qmi data format
 sudo qmicli --device=/dev/cdc-wdm0 --get-expected-data-format
 802-3
 ```
-This because the default setting is
+This is because the default setting is
 ```
 cat /sys/class/net/wwan0/qmi/raw_ip
 N
