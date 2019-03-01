@@ -75,8 +75,9 @@ ls /dev/ttyU*
 The last usb serial port is the AT command port. So in this case
 ```
 minicom -D /dev/ttyUSB2
-
+```
 Check the usb composition
+
 ```
 at!entercnd="A710"
 OK
