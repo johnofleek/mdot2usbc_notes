@@ -11,7 +11,7 @@ at!reset
 ```
 CTRL A Q to exit minicom
 
-# Set the apn
+# Set the apn - probably not needed
 at+cgdcont=1,"IP","3internet","",""  
 
 Shell
