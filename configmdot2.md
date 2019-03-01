@@ -98,8 +98,9 @@ at!reset
 ```
 
 Exit minicom with  
+```
 <Ctrl> a q
-
+```
 
 # Linux shell - useful commands
 
