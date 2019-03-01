@@ -142,7 +142,7 @@ Bring the network interfaces up:
 ip link set dev wwan0 up
 ```
 
-# set the APN and start the network connection
+# Set the APN and start a network connection
 You can also set other credentials - please refer to the qmicli manual
 
 ```
@@ -150,7 +150,7 @@ qmicli --device=/dev/cdc-wdm0 --device-open-proxy --wds-start-network="ip-type=4
 ```
 
 Once "Network started" is displayed, you can send a DHCP request on the
- network interface.
+ network interface.  
 Please note that not all DHCP clients in Linux can support Raw-IP format,
  however udhcpc supports IPv4 over Raw-IP.
 
