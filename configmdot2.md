@@ -19,12 +19,12 @@ Many Sierra Wireless cellular modules based on Qualcomm chipsets implements
 ## Some Sierra Wireless modules versus data link format 
 
 **802.3** 
-Sierra Wireless MC73**
+Sierra Wireless MC73** 
 
 **RAW-IP** 
-Sierra Wireless EM73**
-Sierra Wireless MC74**/EM74** 
-Sierra Wireless EM75**
+Sierra Wireless EM73**  
+Sierra Wireless MC74**/EM74**   
+Sierra Wireless EM75**  
 
 ## QMI - devices
 The cellular modules QMI control interface are usually named cdc-wdm* e.g.
