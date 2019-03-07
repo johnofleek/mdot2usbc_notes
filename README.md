@@ -62,7 +62,7 @@ The board is 61.5mm by 30.5mm - the following drawing is of the initial product 
 
 ## Board supply
 The board can be purchased from   
-[Linkwave](linkwave.co.uk)   
+[Linkwave Technologies](http://linkwave.co.uk)   
 
 
 # This git
