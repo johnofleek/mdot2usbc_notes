@@ -4,12 +4,20 @@ This git contains collection of information about the M.2 module to USB C adapte
 What does the M.2 to USB C board (PCA) do?   
 It interfaces (adapts) USB C to M.2 plug in modules  
 
-**DC power supply input**  
+**Board DC power supply**  
 The board is powered from a nominal 5V DC input
 The board has a regulator which powers the M.2 with 3.4V
 
+**DC power input**  
+There are two power sources to the board  
+1. J3_PIN1 (+5V) J3_PIN2 ground (0V)  
+2. USB C VBUS (+5V) USB C GND (0V)  
 
-The preferred method  
+The preferred method (1) is as follows
+* Apply 5V DC power J3
+* USB C 5V controls the power sequence to M.2 module
+
+
 
 **USB C**  
 Supports
@@ -22,11 +30,14 @@ Connector is an M.2 KEY B
 Supports 1x mini SIM and one embedded (solder down SIM)  
 
 **M.2 signal sequencing**  
+The board has a microcontroller which sequences the power up and power down of the M.2 board. The current sequence with an external 5V power source and USB C hot plugged in and out - is like this  
+
+![Image of power sequence](https://github.com/johnofleek/mdot2usbc_notes/blob/master/M_2_sequence20190307.png)  
 
 
 
 
-# git
+# This git
 ## Checkin
 ```
 git add .
@@ -36,6 +47,6 @@ git push -u origin master
 
 ## Clone
 ```
-git https://github.com/johnofleek/mdot2usbc_notes.git .
+git clone https://github.com/johnofleek/mdot2usbc_notes.git
 ```
 
