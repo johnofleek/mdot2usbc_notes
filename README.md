@@ -9,14 +9,26 @@ It interfaces (adapts) USB C to M.2 plug in modules
 There are two power sources to the board  
 1. J3_PIN1 (+5V) J3_PIN2 ground (0V)  
 2. USB C VBUS (+5V) USB C GND (0V)  
-  
+
+Note that the J3 and and USB C 5V signals are diode or'd so that the highest input voltage will supply the current to the boards DC power supply  
+
+### Preferred DC power input - method 1
 The preferred method (1) is as follows
 * Apply 5V DC power J3
 * USB C 5V controls the power sequence to M.2 module  
   
 This is the preferred method because  
 1. It enables the board to control the M.2 module power down sequence - *see M.2 module datasheet*  
-2. The 5V power source current capability is not dependant on the host USB current capability
+2. The 5V power source current capability is not dependant on the hosts USB current capability
+
+### Preferred DC power input - method 1
+* No power source us connected to 5V DC power J3
+* USB C 5V provides DC power and controls the power sequence to M.2 module
+
+This is the non-preferred method because  
+1. The M.2 module power down sequence is uncontrolled - *see M.2 module datasheet*  
+2. The 5V power source current capability is dependant on the hosts USB current capability
+
   
 ## Board DC power supply
 The board is powered from a nominal 5V DC input  
@@ -42,6 +54,7 @@ The board has a microcontroller which sequences the power up and power down of t
 ![Image of power sequence](https://github.com/johnofleek/mdot2usbc_notes/blob/master/M_2_sequence20190307.png)  
 
 ## Board dimensions
+The board is 61.5mm by 30.5mm - the following drawing is of the initial product build  
 
 ![Image of board](https://github.com/johnofleek/mdot2usbc_notes/blob/master/M2PCB_20190306.jpg)  
 
