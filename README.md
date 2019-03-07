@@ -1,5 +1,7 @@
-# mdot2usbc_notes
-This git contains information about the M.2 module to USB C adapter board
+# mdot2usbc_notes/README.md
+This git (https://github.com/johnofleek/mdot2usbc_notes/) contains information about the M.2 module to USB C adapter board
+
+John Thompson 20190307
 
 *What does the M.2 to USB C board (PCA) do?*   
 It interfaces (adapts) USB C to M.2 plug in modules  
@@ -58,7 +60,9 @@ The board is 61.5mm by 30.5mm - the following drawing is of the initial product 
 
 ![Image of board](https://github.com/johnofleek/mdot2usbc_notes/blob/master/M2PCB_20190306.jpg)  
 
-
+## Board supply
+The board can be purchased from   
+[Linkwave](linkwave.co.uk)   
 
 
 # This git
