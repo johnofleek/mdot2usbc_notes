@@ -5,7 +5,8 @@ John Thompson 20190307
 
 *What does the M.2 to USB C board (PCA) do?*   
 It interfaces (adapts) USB C to M.2 plug in modules  
-
+  
+  
 ## Connectors
 ### USB C  
 Supports
@@ -22,7 +23,8 @@ MOLEX mini-SPOX  2.5mm Header, Right Angle, Shrouded, Friction Lock, 2 circuits 
 
 ### Micro SIM 
 The board supports 1x micro SIM and one embedded (solder down SIM) 
-
+  
+  
 ## DC power input
 The board is powered from a nominal 5V DC input  
 There are two power source input connections to the board  
@@ -41,30 +43,32 @@ This is the preferred method because
 1. It enables the board to control the M.2 module power down sequence - *see M.2 module datasheet*  
 2. The 5V power source current capability is not dependant on the hosts USB current capability
 
-### Non=-referred DC power input - method 2
+### Non-referred DC power input - method 2
 * No power source is connected to 5V DC power J3
 * USB C 5V provides DC power and controls the power sequence to M.2 module
 
 This is the non-preferred method because  
 1. The M.2 module power down sequence is uncontrolled - *see M.2 module datasheet*  
 2. The 5V power source current capability is dependant on the hosts USB current capability
-
-
+  
+  
 ## M.2 module signal sequencing  
 The board has a microcontroller which sequences the power up and power down of the M.2 board. The current sequence with an external 5V power source and USB C hot plugged in and out - is like this  
 
 ![Image of power sequence](https://github.com/johnofleek/mdot2usbc_notes/blob/master/M_2_sequence20190307.png)  
-
+  
+  
 ## Board dimensions
 The board is 61.5mm by 30.5mm - the following drawing is of the initial product build  
 
 ![Image of board](https://github.com/johnofleek/mdot2usbc_notes/blob/master/M2PCB_20190306.jpg)  
-
+  
+  
 ## Board supply
 The board can be purchased from   
 [Linkwave Technologies](http://linkwave.co.uk)   
-
-
+    
+    
 # This git
 ## Checkin
 ```
@@ -72,7 +76,7 @@ git add .
 git commit -m "first commit"
 git push -u origin master
 ```
-
+  
 ## Clone
 ```
 git clone https://github.com/johnofleek/mdot2usbc_notes.git
