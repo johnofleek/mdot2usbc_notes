@@ -12,16 +12,16 @@ VERSION="9 (stretch)"
 And a Sierra Wireless EM7305 fitted into a Raspberry pi M.2 to USB C HAT board
 
 
-# QMI
+# QMI  
 Many Sierra Wireless cellular modules based on Qualcomm chipsets implements
  the Qualcomm MSM (QMI) Interface
 
 ## Some Sierra Wireless modules versus data link format 
 
-**802.3** 
-Sierra Wireless MC73** 
+**802.3**  
+Sierra Wireless MC73**  
 
-**RAW-IP** 
+**RAW-IP**  
 Sierra Wireless EM73**  
 Sierra Wireless MC74**/EM74**   
 Sierra Wireless EM75**  
