@@ -25,7 +25,7 @@ lsusb -t
 
 ```
 
-## check usb composition in terminal (this is default)
+## Check usb composition in terminal (this is default)
 ```
 at!usbcomp?
 Config Index: 1
@@ -33,7 +33,9 @@ Config Type:  1 (Generic)
 Interface bitmask: 0000050D (diag,nmea,modem,rmnet0,rmnet1)
 ```
 
+## Make sure everything is off
 
+```
 qmi-network /dev/cdc-wdm0 stop
 
 Loading profile at /etc/qmi-network.conf...
@@ -48,8 +50,7 @@ qmi-network /dev/cdc-wdm1 stop
 
 sudo ifconfig wwan0 down
 sudo ifconfig wwan1 down
-
-#####
+```
 
 ## config interface
 
@@ -111,7 +112,6 @@ PING bbc.co.uk (151.101.128.81) 56(84) bytes of data.
 rtt min/avg/max/mdev = 41.870/43.001/44.132/1.131 ms
 
 
-####
 
 ## Speed test
 
