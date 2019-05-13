@@ -1,5 +1,5 @@
 This note documents a process to bring up a Debian linux wwan interface using the
- Qualcomm QMI interface with the *RAW-IP* data link format.
+ Qualcomm QMI interface with the **RAW-IP** data link format.
 
 These notes were tested on a Raspberry Pi3
 ```
@@ -9,20 +9,22 @@ NAME="Raspbian GNU/Linux"
 VERSION_ID="9"
 VERSION="9 (stretch)"
 ```
+And a Sierra Wireless EM7305 fitted into a Raspberry pi M.2 to USB C HAT board
 
 
-# QMI
+# QMI  
 Many Sierra Wireless cellular modules based on Qualcomm chipsets implements
  the Qualcomm MSM (QMI) Interface
 
 ## Some Sierra Wireless modules versus data link format 
 
-*802.3* 
-Sierra Wireless MC73**/EM73**
+**802.3**  
+Sierra Wireless MC73**  
 
-*RAW-IP* 
-Sierra Wireless MC74**/EM74** 
-Sierra Wireless EM75**
+**RAW-IP**  
+Sierra Wireless EM73**  
+Sierra Wireless MC74**/EM74**   
+Sierra Wireless EM75**  
 
 ## QMI - devices
 The cellular modules QMI control interface are usually named cdc-wdm* e.g.
@@ -45,7 +47,7 @@ sudo apt-get install minicom
 ```
 
 Install udhcpu  
-It's used to get an ip address from a dhcp server.
+Used to get an ip address from a dhcp server.
 ```
 sudo apt-get install udhcpc
 ```
@@ -75,8 +77,9 @@ ls /dev/ttyU*
 The last usb serial port is the AT command port. So in this case
 ```
 minicom -D /dev/ttyUSB2
-
+```
 Check the usb composition
+
 ```
 at!entercnd="A710"
 OK
@@ -110,8 +113,9 @@ at!reset
 ```
 
 Exit minicom with  
+```
 <Ctrl> a q
-
+```
 
 # Linux shell - useful commands
 
@@ -132,7 +136,7 @@ Check the qmi data format
 sudo qmicli --device=/dev/cdc-wdm0 --get-expected-data-format
 802-3
 ```
-This because the default setting is
+This is because the default setting is
 ```
 cat /sys/class/net/wwan0/qmi/raw_ip
 N
@@ -151,7 +155,7 @@ Bring the network interfaces up:
 ip link set dev wwan0 up
 ```
 
-# set the APN and start the network connection
+# Set the APN and start a network connection
 You can also set other credentials - please refer to the qmicli manual
 
 ```
@@ -159,7 +163,7 @@ qmicli --device=/dev/cdc-wdm0 --device-open-proxy --wds-start-network="ip-type=4
 ```
 
 Once "Network started" is displayed, you can send a DHCP request on the
- network interface.
+ network interface.  
 Please note that not all DHCP clients in Linux can support Raw-IP format,
  however udhcpc supports IPv4 over Raw-IP.
 
@@ -177,6 +181,53 @@ Provide the network handle and CID returned at connection activation
 ```
 qmicli --device=/dev/cdc-wdm0 --device-open-proxy --wds-stop-network=NETWORK_HANDLE --client-cid=CID
 ```
+
+# Additional testing
+
+Request module manufacturer
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-manufacturer
+```
+
+Get module model
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-model
+```
+
+Get firmware version
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-revision
+```
+
+Get module IDs (IMEI etc.)
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --dms-get-ids
+```
+
+Get SIM card status
+```
+qmicli --device=/dev/cdc-wdm0 --device-open-proxy --uim-get-card-status
+```
+
+Check libqmi version
+Recent cellular modules like Sierra Wireless EM7565 require at least libqmi V1.20. 
+```
+qmicli --version 
+```
+Test the WAN IP connection
+A ping to a remote server using the cellular network interface
+```
+ping -I wwan0 8.8.8.8
+```
+Network interface information
+```
+ifconfig wwan0
+```
+
+# Further notes
+libqmi is well integrated and supported in ModemManager tool for Linux. ModemManager again is well integrated and supported when using NetworkManager tool in Linux. Please note however that these two tools expect the cellular module interfaces to only be used by them so if you manually want to use the libqmi library or AT commands interfaces, please turn off/disable ModemManager and NetworkManager first.
+
+The libqmi is a generic open source library for Linux systems and QMI protocol from Qualcomm, therefor there are several commands only working on selected devices and not necessarily on supported in the specific device you use, resulting in an error message.
 
 
 
