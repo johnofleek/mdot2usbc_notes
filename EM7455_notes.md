@@ -1,6 +1,17 @@
 # Notes 2019-05-13
 
-## modem type
+Board JT M.2 RPi HAT  
+
+Rpi  
+```
+cat /etc/os-release
+PRETTY_NAME="Raspbian GNU/Linux 9 (stretch)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+```
+
+## Modem type
 ```
 ati
 Manufacturer: Sierra Wireless, Incorporated
@@ -52,7 +63,7 @@ sudo ifconfig wwan0 down
 sudo ifconfig wwan1 down
 ```
 
-## config interface
+## Config interface
 
 sudo su
 
@@ -76,7 +87,7 @@ root@raspberrypi:/home/pi# ip link set dev wwan0 down
 root@raspberrypi:/home/pi# ip link set dev wwan1 down
 ```
 
-## start interface
+## Start interface
 ```
 root@raspberrypi:/home/pi# ip link set dev wwan0 up
 root@raspberrypi:/home/pi# qmicli --device=/dev/cdc-wdm0 --device-open-proxy --wds-start-network="ip-type=4,apn=three.co.uk" --client-no-release-cid
@@ -99,7 +110,7 @@ Too few arguments.
 Too few arguments
 ```
 
-## ping test
+## Ping test
 
 ```
 root@raspberrypi:/home/pi# ping bbc.co.uk
@@ -110,12 +121,12 @@ PING bbc.co.uk (151.101.128.81) 56(84) bytes of data.
 --- bbc.co.uk ping statistics ---
 2 packets transmitted, 2 received, 0% packet loss, time 1001ms
 rtt min/avg/max/mdev = 41.870/43.001/44.132/1.131 ms
-
+```
 
 
 ## Speed test
-
+```
 22Mbps down
 8 Mbps up
-
+```
 
