@@ -85,6 +85,19 @@ AT!UDUSBCOMP?
 
 OK
 ```
+6== DM, NMEA, AT, QMI
+
+
+# EM7455 - composition doesn't have AT!UDUSBCOMP
+
+```
+at!usbcomp?
+Config Index: 1
+Config Type:  1 (Generic)
+Interface bitmask: 0000050D (diag,nmea,modem,rmnet0,rmnet1)
+```
+
+
 
 If the composition is not 6 - reconfigure the module
 ```
@@ -109,7 +122,7 @@ qmicli --device=/dev/cdc-wdm0 -p --dms-uim-verify-pin=PIN,1234
 
 List the module network interface with:
 ```
-qmicli --device=/dev/cdc-wdm0 --device-open-proxy --get-wwan-iface
+sudo qmicli --device=/dev/cdc-wdm0 --device-open-proxy --get-wwan-iface
 ```
 
 # QMI data format configuration
