@@ -69,6 +69,16 @@ The board can be purchased from
 [Linkwave Technologies](http://linkwave.co.uk)   
     
     
+# Host connectivity
+The git contains some information on connectivity using qmi.
+
+There is an alternative connectivity option MBIM, this requires configuration of the EM module.
+
+The following link is a site which covers our Raspberry pi product - but there is also some documentation describing using MBIM with the EM modules
+[link](https://johnofleek.github.io/PiloT/docs/networkManagerDocs/instructions_EM7455.html)
+Bote that MBIM is supported by Windows 10
+
+    
 # This git
 ## Checkin
 ```
