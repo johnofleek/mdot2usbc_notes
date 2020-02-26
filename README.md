@@ -40,7 +40,7 @@ Note that the J3 and and USB C 5V signals are diode or'd so that the highest inp
 
 The board has a regulator which powers the M.2 module with 3.4V  
 
-### Preferred DC power source - method 1
+### Preferred DC power source - external power - method 1
 * Apply 5V DC power J3
 * USB C 5V controls the power sequence to M.2 module  
   
@@ -48,12 +48,12 @@ This is the preferred method because
 1. It enables the board to control the M.2 module power down sequence - *see M.2 module datasheet*  
 2. The 5V power source current capability is not dependant on the hosts USB current capability
 
-### Non-referred DC power input - method 2
+### Non-referred DC power input - USB C power - method 2
 * No power source is connected to 5V DC power J3
 * USB C 5V provides DC power and controls the power sequence to M.2 module
 
 This is the non-preferred method because  
-1. The M.2 module power down sequence is uncontrolled - *see M.2 module datasheet*  
+1. The M.2 module power down sequence is uncontrolled - *see M.2 module datasheet* 
 2. The 5V power source current capability is dependant on the hosts USB current capability
   
   
@@ -62,7 +62,16 @@ The board has a microcontroller which sequences the power up and power down of t
 
 ![Image of power sequence](https://github.com/johnofleek/mdot2usbc_notes/blob/master/M_2_sequence20190307.png)  
   
-  
+
+## LED D6
+This LED indicates the power sequence state. When the power is being applied to the module and the module is out of reset this LED
+1. Flashes 3 times indicating powered from the USB C connector
+2. Flashes 2 timed indicating powered from the external power connector
+
+## LED D1
+This is the module ON LED - if the module is powered and is not in Airplane mode the LED is on
+
+
 ## Board dimensions
 The board is 61.5mm by 30.5mm - the following drawing is of the initial product build  
 
