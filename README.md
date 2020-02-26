@@ -28,8 +28,12 @@ The board supports 1x micro SIM and one embedded (solder down SIM)
 ## DC power input
 The board is powered from a nominal 5V DC input  
 There are two power source input connections to the board  
-1. J3_PIN1 (+5V) J3_PIN2 ground (0V)  
-2. USB C VBUS (+5V) USB C GND (0V)  
+1. J3 MOLEX mini-SPOX 
+    1.1 J3_PIN1 (+5V)
+    1.2 J3_PIN2 ground (0V)  
+2. USB C
+    2.1 VBUS (+5V) 
+    2.2 USB C GND (0V)  
 
 Note that the J3 and and USB C 5V signals are diode or'd so that the highest input voltage will supply the current to the boards internal DC power supply  
 
