@@ -22,7 +22,7 @@ The power connector fitted to the board is a
 MOLEX mini-SPOX  2.5mm Header, Right Angle, Shrouded, Friction Lock, 2 circuits *22-05-7025*
 
 ### Micro SIM 
-The board supports 1x micro SIM and one embedded (solder down SIM) 
+The board supports 1x micro SIM and one embedded solder down SIM (not fitted as a default)
   
   
 ## DC power input
