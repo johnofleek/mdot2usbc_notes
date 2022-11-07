@@ -93,6 +93,8 @@ The following link is a site which covers our Raspberry pi product - but there i
 
 Note that MBIM is supported by Windows 10
 
+#  3D model of the board assembly
+[STEP FILE here](PCBplay.step)
     
 # This git
 ## Checkin
