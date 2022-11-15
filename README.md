@@ -48,7 +48,7 @@ This is the preferred method because
 1. It enables the board to control the M.2 module power down sequence - *see M.2 module datasheet*  
 2. The 5V power source current capability is not dependant on the hosts USB current capability
 
-### Non-referred DC power input - USB C power - method 2
+### Non-preferred DC power input - USB C power - method 2
 * No power source is connected to 5V DC power J3
 * USB C 5V provides DC power and controls the power sequence to M.2 module
 
